@@ -1,5 +1,4 @@
 class Api::ApplicationController < ApplicationController
-    skip_before_action :verify_authenticity_token
     rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
 
     def record_invalid(error)

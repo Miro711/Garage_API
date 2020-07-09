@@ -20,6 +20,11 @@ class Api::V1::CarsController < Api::ApplicationController
         render json: { id: car.id }
     end
 
+    def index
+        cars = Car.where person_id: params[:person_id]
+        render json: cars
+    end
+
     private
 
     def car
