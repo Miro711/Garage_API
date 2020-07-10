@@ -12,7 +12,7 @@ class Api::V1::PeopleController < Api::ApplicationController
 
   def index
     people = Person.order(created_at: :desc)
-    render json: people
+    render json: people, each_serializer: PersonSerializer
   end
 
   def destroy
